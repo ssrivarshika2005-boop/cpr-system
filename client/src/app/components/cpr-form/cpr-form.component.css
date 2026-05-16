@@ -1,0 +1,186 @@
+/* Custom Properties for consistency */
+:root {
+  --primary-color: #0d6efd;
+  --primary-hover: #0a58ca;
+  --bg-color: #f8fafc;
+  --text-main: #2d3748;
+  --text-muted: #718096;
+  --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  --input-focus: rgba(13, 110, 253, 0.15);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-color);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.main-container {
+  padding-bottom: 80px;
+}
+
+/* Topbar with Glassmorphism */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.topbar h2 {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--primary-color);
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Enhanced Section Cards */
+.section-card {
+  background: white;
+  margin: 25px auto;
+  max-width: 1100px;
+  padding: 35px;
+  border-radius: 24px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease;
+}
+
+.section-card:hover {
+  transform: translateY(-2px);
+}
+
+.section-card h3 {
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  border-left: 4px solid var(--primary-color);
+  padding-left: 15px;
+}
+
+/* Responsive Grid */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+/* Form Styling */
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.form-control {
+  width: 100%;
+  height: 52px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  background-color: #fff;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px var(--input-focus);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Table Refinement */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Action Section */
+.submit-section {
+  margin: 40px auto;
+  max-width: 1100px;
+  padding: 0 30px;
+}
+
+.submit-btn {
+  width: 100%;
+  height: 60px;
+  border: none;
+  background: rgb(47, 59, 172);
+  color: rgb(251, 253, 255);
+  font-size: 1.1rem;
+  border-radius: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px 0 rgba(13, 110, 253, 0.39);
+}
+
+.submit-btn:hover {
+  background: rgb(111, 202, 222);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(13, 110, 253, 0.23);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .topbar {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .section-card {
+    margin: 15px;
+    padding: 20px;
+  }
+}
