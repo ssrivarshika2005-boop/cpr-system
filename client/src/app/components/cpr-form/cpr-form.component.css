@@ -98,6 +98,12 @@ input:focus {
   flex-direction: column;
 }
 
+.field-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
 select {
   padding: 12px;
   border-radius: 10px;
@@ -156,6 +162,5 @@ td input {
 }
 
 th {
-  background: #2563eb;
   color: white;
 }

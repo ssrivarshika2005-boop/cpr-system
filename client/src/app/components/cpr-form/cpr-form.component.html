@@ -17,44 +17,64 @@
   <form (ngSubmit)="submitForm()">
 
     <!-- SECTION A -->
-    <section id="A" class="card">
+   <section id="A" class="card">
 
-      <h2>Section A</h2>
+  <h2>Patient Details</h2>
 
-      <div class="grid">
+  <div class="grid">
 
-        <input placeholder="Clinic Name"
-          name="clinicName"
-          [(ngModel)]="formData.clinicName">
+    <div class="field-group">
+      <label>Patient Name</label>
+      <input type="text"
+        name="clinicName"
+        [(ngModel)]="formData.clinicName">
+    </div>
 
-        <input placeholder="Date & Time of Arrest"
-          type="datetime-local"
-          name="arrestDateTime"
-          [(ngModel)]="formData.arrestDateTime">
+    <div class="field-group">
+      <label>Date & Time of Arrest</label>
+      <input type="datetime-local"
+        name="arrestDateTime"
+        [(ngModel)]="formData.arrestDateTime">
+    </div>
 
-        <input placeholder="Location"
-          name="location"
-          [(ngModel)]="formData.location">
+    <div class="field-group">
+      <label>Location</label>
+      <input type="text"
+        name="location"
+        [(ngModel)]="formData.location">
+    </div>
 
-        <input placeholder="Doctor Informed By"
-          name="doctorInformedBy"
-          [(ngModel)]="formData.doctorInformedBy">
+    <div class="field-group">
+      <label>Doctor Informed By</label>
+      <input type="text"
+        name="doctorInformedBy"
+        [(ngModel)]="formData.doctorInformedBy">
+    </div>
 
-        <input placeholder="Doctor Name"
-          name="doctorName"
-          [(ngModel)]="formData.doctorName">
+    <div class="field-group">
+      <label>Doctor Name</label>
+      <input type="text"
+        name="doctorName"
+        [(ngModel)]="formData.doctorName">
+    </div>
 
-        <input placeholder="Relative Name"
-          name="relativeName"
-          [(ngModel)]="formData.relativeName">
+    <div class="field-group">
+      <label>Relative Name</label>
+      <input type="text"
+        name="relativeName"
+        [(ngModel)]="formData.relativeName">
+    </div>
 
-        <input placeholder="Ambulance Called By"
-          name="ambulanceCalledBy"
-          [(ngModel)]="formData.ambulanceCalledBy">
+    <div class="field-group">
+      <label>Ambulance Called By</label>
+      <input type="text"
+        name="ambulanceCalledBy"
+        [(ngModel)]="formData.ambulanceCalledBy">
+    </div>
 
-      </div>
+  </div>
 
-    </section>
+</section>
 
     <!-- SECTION B -->
     <section id="B" class="card">
