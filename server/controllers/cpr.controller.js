@@ -1,11 +1,10 @@
 const db = require('../config/db');
 
-exports.submitForm = async (req, res) => {
+exports.submitForm = (req, res) => {
 
     const data = req.body;
 
     const sql = `
-
         INSERT INTO cpr_forms (
 
             patientName,
@@ -23,16 +22,32 @@ exports.submitForm = async (req, res) => {
             bloodPressure,
             ecgRhythm,
             aed,
-            avf,
-            cvc,
+
+            avfUsed,
+            avfTime,
+            avfSite,
+
+            cvcUsed,
+            cvcTime,
+            cvcSite,
+
+            ivTime,
             ivSite,
             insertedBy,
-            outcome
+            outcome,
 
-        )
+            drugTime,
+            drugECG,
+            aedDefib,
+            adrenaline,
+            atropine,
+            calcium,
+            bicarbonate,
+            otherDrugs,
+            route,
+            adminBy
 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-
+        ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
     `;
 
     db.query(sql, [
@@ -52,32 +67,38 @@ exports.submitForm = async (req, res) => {
         data.bloodPressure,
         data.ecgRhythm,
         data.aed,
-        data.avf,
-        data.cvc,
+
+        data.avfUsed,
+        data.avfTime,
+        data.avfSite,
+
+        data.cvcUsed,
+        data.cvcTime,
+        data.cvcSite,
+
+        data.ivTime,
         data.ivSite,
         data.insertedBy,
-        data.outcome
+        data.outcome,
+
+        data.drugTime,
+        data.drugECG,
+        data.aedDefib,
+        data.adrenaline,
+        data.atropine,
+        data.calcium,
+        data.bicarbonate,
+        data.otherDrugs,
+        data.route,
+        data.adminBy
 
     ], (err, result) => {
 
         if (err) {
-
             console.log(err);
-
-            return res.status(500).json({
-
-                message: 'Database Error'
-
-            });
-
+            return res.status(500).json({ message: 'Database Error' });
         }
 
-        res.json({
-
-            message: 'CPR Form Saved Successfully'
-
-        });
-
+        res.json({ message: 'CPR Form Saved Successfully' });
     });
-
 };

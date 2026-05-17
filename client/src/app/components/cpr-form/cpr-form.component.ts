@@ -41,7 +41,24 @@ export class CPRFormComponent {
     cvc: '',
     ivSite: '',
     insertedBy: '',
-    outcome: ''
+    outcome: '',
+    avfUsed: '',
+    avfTime: '',
+    avfSite: '',
+    cvcUsed: '',
+    cvcTime: '',
+    cvcSite: '',
+    ivTime: '',
+    drugTime: '',
+    drugECG: '',
+    aedDefib: '',
+    adrenaline: '',
+    atropine: '',
+    calcium: '',
+    bicarbonate: '',
+    otherDrugs: '',
+    route: '',
+    adminBy: ''
 
   };
 
@@ -86,7 +103,24 @@ export class CPRFormComponent {
           cvc: '',
           ivSite: '',
           insertedBy: '',
-          outcome: ''
+          outcome: '',
+          avfUsed: '',
+          avfTime: '',
+          avfSite: '',
+          cvcUsed: '',
+          cvcTime: '',
+          cvcSite: '',
+          ivTime: '',
+          drugTime: '',
+          drugECG: '',
+          aedDefib: '',
+          adrenaline: '',
+          atropine: '',
+          calcium: '',
+          bicarbonate: '',
+          otherDrugs: '',
+          route: '',
+          adminBy: ''
 
         };
 

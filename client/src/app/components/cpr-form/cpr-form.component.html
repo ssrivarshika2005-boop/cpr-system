@@ -1,427 +1,313 @@
-<div class="main-container">
+<div class="form-wrapper">
 
   <!-- HEADER -->
-
-  <div class="topbar shadow">
-
-    <h2>CPR Arrest Form</h2>
-
-    <div class="nav-links">
-      <a href="#sectionA">Section A</a>
-      <a href="#sectionB">Section B</a>
-      <a href="#sectionC">Section C</a>
-      <a href="#observations">Observations</a>
-      <a href="#drugs">Drugs</a>
-    </div>
-
+  <div class="header">
+    <h1>CARDIOPULMONARY ARREST FORM</h1>
+    <p>Clinical Documentation System</p>
   </div>
 
-  <!-- FORM -->
+  <!-- NAV -->
+  <div class="nav">
+    <a href="#A">Section A</a>
+    <a href="#B">Section B</a>
+    <a href="#C">Section C</a>
+    <a href="#D">Drug Record</a>
+  </div>
 
   <form (ngSubmit)="submitForm()">
 
-    <!-- BASIC DETAILS -->
-
-    <div class="section-card">
-
-      <h3>Patient Details</h3>
-
-      <div class="grid-2">
-
-        <div>
-          <label>Patient Name</label>
-
-          <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="formData.patientName"
-            name="patientName">
-        </div>
-
-        <div>
-          <label>NRIC</label>
-
-          <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="formData.nric"
-            name="nric">
-        </div>
-
-        <div>
-          <label>Clinic Name</label>
-
-          <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="formData.clinicName"
-            name="clinicName">
-        </div>
-
-      </div>
-
-    </div>
-
     <!-- SECTION A -->
+    <section id="A" class="card">
 
-    <div class="section-card" id="sectionA">
+      <h2>Section A</h2>
 
-      <h3>Section A - Arrest Information</h3>
+      <div class="grid">
 
-      <div class="grid-2">
+        <input placeholder="Clinic Name"
+          name="clinicName"
+          [(ngModel)]="formData.clinicName">
 
-        <div>
-          <label>Date & Time of Arrest</label>
+        <input placeholder="Date & Time of Arrest"
+          type="datetime-local"
+          name="arrestDateTime"
+          [(ngModel)]="formData.arrestDateTime">
 
-          <input
-            type="datetime-local"
-            class="form-control"
-            [(ngModel)]="formData.arrestDateTime"
-            name="arrestDateTime">
-        </div>
+        <input placeholder="Location"
+          name="location"
+          [(ngModel)]="formData.location">
 
-        <div>
-          <label>Location</label>
+        <input placeholder="Doctor Informed By"
+          name="doctorInformedBy"
+          [(ngModel)]="formData.doctorInformedBy">
 
-          <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="formData.location"
-            name="location">
-        </div>
+        <input placeholder="Doctor Name"
+          name="doctorName"
+          [(ngModel)]="formData.doctorName">
 
-        <div>
-          <label>Doctor Informed By</label>
+        <input placeholder="Relative Name"
+          name="relativeName"
+          [(ngModel)]="formData.relativeName">
 
-          <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="formData.doctorInformedBy"
-            name="doctorInformedBy">
-        </div>
-
-        <div>
-          <label>Name of Doctor</label>
-
-          <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="formData.doctorName"
-            name="doctorName">
-        </div>
-
-        <div>
-          <label>Relative Name</label>
-
-          <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="formData.relativeName"
-            name="relativeName">
-        </div>
-
-        <div>
-          <label>Ambulance Called By</label>
-
-          <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="formData.ambulanceCalledBy"
-            name="ambulanceCalledBy">
-        </div>
+        <input placeholder="Ambulance Called By"
+          name="ambulanceCalledBy"
+          [(ngModel)]="formData.ambulanceCalledBy">
 
       </div>
 
-    </div>
+    </section>
 
     <!-- SECTION B -->
+    <section id="B" class="card">
 
-    <div class="section-card" id="sectionB">
+      <h2>Section B - Clinical</h2>
 
-      <h3>Section B - Airway & Circulation</h3>
+      <div class="grid">
 
-      <div class="grid-2">
+        <input placeholder="Respiration"
+          name="respiration"
+          [(ngModel)]="formData.respiration">
 
-        <div>
-          <label>Respiration</label>
+        <input placeholder="Oxygen L/min"
+          name="oxygen"
+          [(ngModel)]="formData.oxygen">
 
-          <select
-            class="form-control"
-            [(ngModel)]="formData.respiration"
-            name="respiration">
+        <input placeholder="Pulse"
+          name="pulse"
+          [(ngModel)]="formData.pulse">
 
-            <option>Present</option>
-            <option>Absent</option>
+        <input placeholder="Blood Pressure"
+          name="bloodPressure"
+          [(ngModel)]="formData.bloodPressure">
 
-          </select>
-        </div>
+        <input placeholder="ECG Rhythm"
+          name="ecgRhythm"
+          [(ngModel)]="formData.ecgRhythm">
 
-        <div>
-          <label>Oxygen Administered</label>
-
-          <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="formData.oxygen"
-            name="oxygen">
-        </div>
-
-        <div>
-          <label>Carotid Pulse</label>
-
-          <select
-            class="form-control"
-            [(ngModel)]="formData.pulse"
-            name="pulse">
-
-            <option>Present</option>
-            <option>Absent</option>
-
-          </select>
-        </div>
-
-        <div>
-          <label>Blood Pressure</label>
-
-          <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="formData.bloodPressure"
-            name="bloodPressure">
-        </div>
-
-        <div>
-          <label>ECG Rhythm</label>
-
-          <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="formData.ecgRhythm"
-            name="ecgRhythm">
-        </div>
-
-        <div>
-          <label>AED Applied</label>
-
-          <select
-            class="form-control"
-            [(ngModel)]="formData.aed"
-            name="aed">
-
-            <option>Yes</option>
-            <option>No</option>
-
-          </select>
-        </div>
+        <input placeholder="AED"
+          name="aed"
+          [(ngModel)]="formData.aed">
 
       </div>
 
-    </div>
+    </section>
 
     <!-- SECTION C -->
+    <!-- VASCULAR ACCESS -->
+<section id="C" class="card">
 
-    <div class="section-card" id="sectionC">
+  <h2>Vascular Access</h2>
 
-      <h3>Section C - Vascular Access</h3>
+  <div class="grid">
 
-      <div class="grid-2">
-
-        <div>
-          <label>AVF/AVG Used</label>
-
-          <select
-            class="form-control"
-            [(ngModel)]="formData.avf"
-            name="avf">
-
-            <option>Yes</option>
-            <option>No</option>
-
-          </select>
-        </div>
-
-        <div>
-          <label>CVC Used</label>
-
-          <select
-            class="form-control"
-            [(ngModel)]="formData.cvc"
-            name="cvc">
-
-            <option>Yes</option>
-            <option>No</option>
-
-          </select>
-        </div>
-
-        <div>
-          <label>IV Site</label>
-
-          <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="formData.ivSite"
-            name="ivSite">
-        </div>
-
-        <div>
-          <label>Inserted By</label>
-
-          <input
-            type="text"
-            class="form-control"
-            [(ngModel)]="formData.insertedBy"
-            name="insertedBy">
-        </div>
-
-      </div>
-
+    <!-- AVF / AVG -->
+    <div class="field-group">
+      <label>AVF / AVG Used</label>
+      <select name="avfUsed" [(ngModel)]="formData.avfUsed">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
     </div>
 
-    <!-- OBSERVATION TABLE -->
-
-    <div class="section-card" id="observations">
-
-      <h3>Observations</h3>
-
-      <div class="table-responsive">
-
-        <table class="table table-bordered">
-
-          <thead>
-
-            <tr>
-              <th>Time</th>
-              <th>Heart Rate</th>
-              <th>Blood Pressure</th>
-              <th>Respiration</th>
-              <th>Pupils</th>
-            </tr>
-
-          </thead>
-
-          <tbody>
-
-            <tr>
-
-              <td><input type="time" class="form-control"></td>
-
-              <td><input type="text" class="form-control"></td>
-
-              <td><input type="text" class="form-control"></td>
-
-              <td><input type="text" class="form-control"></td>
-
-              <td><input type="text" class="form-control"></td>
-
-            </tr>
-
-            <tr>
-
-              <td><input type="time" class="form-control"></td>
-
-              <td><input type="text" class="form-control"></td>
-
-              <td><input type="text" class="form-control"></td>
-
-              <td><input type="text" class="form-control"></td>
-
-              <td><input type="text" class="form-control"></td>
-
-            </tr>
-
-          </tbody>
-
-        </table>
-
-      </div>
-
+    <div class="field-group">
+      <label>AVF Time (hour)</label>
+      <input type="text" name="avfTime" [(ngModel)]="formData.avfTime">
     </div>
 
-    <!-- DRUG TABLE -->
-
-    <div class="section-card" id="drugs">
-
-      <h3>Drug Administration</h3>
-
-      <div class="table-responsive">
-
-        <table class="table table-bordered">
-
-          <thead>
-
-            <tr>
-              <th>Time</th>
-              <th>ECG Rhythm</th>
-              <th>AED</th>
-              <th>Adrenaline</th>
-              <th>Other Drugs</th>
-            </tr>
-
-          </thead>
-
-          <tbody>
-
-            <tr>
-
-              <td><input type="time" class="form-control"></td>
-
-              <td><input type="text" class="form-control"></td>
-
-              <td><input type="text" class="form-control"></td>
-
-              <td><input type="text" class="form-control"></td>
-
-              <td><input type="text" class="form-control"></td>
-
-            </tr>
-
-            <tr>
-
-              <td><input type="time" class="form-control"></td>
-
-              <td><input type="text" class="form-control"></td>
-
-              <td><input type="text" class="form-control"></td>
-
-              <td><input type="text" class="form-control"></td>
-
-              <td><input type="text" class="form-control"></td>
-
-            </tr>
-
-          </tbody>
-
-        </table>
-
-      </div>
-
+    <div class="field-group">
+      <label>AVF Site</label>
+      <input type="text" name="avfSite" [(ngModel)]="formData.avfSite">
     </div>
 
-    <!-- OUTCOME -->
-
-    <div class="section-card">
-
-      <h3>Outcome of Resuscitation</h3>
-
-      <textarea
-        rows="5"
-        class="form-control"
-        [(ngModel)]="formData.outcome"
-        name="outcome"></textarea>
-
+    <!-- CVC -->
+    <div class="field-group">
+      <label>CVC Used</label>
+      <select name="cvcUsed" [(ngModel)]="formData.cvcUsed">
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
     </div>
 
-    <!-- BUTTON -->
-  
-
-    <div class="submit-section">
-
-      <button class="submit-btn">
-        Submit CPR Form
-      </button>
-      
+    <div class="field-group">
+      <label>CVC Time (hour)</label>
+      <input type="text" name="cvcTime" [(ngModel)]="formData.cvcTime">
     </div>
+
+    <div class="field-group">
+      <label>CVC Site</label>
+      <input type="text" name="cvcSite" [(ngModel)]="formData.cvcSite">
+    </div>
+
+    <!-- IV Cannula -->
+    <div class="field-group">
+      <label>IV Cannula Time Initiated</label>
+      <input type="text" name="ivTime" [(ngModel)]="formData.ivTime">
+    </div>
+
+    <div class="field-group">
+      <label>IV Site</label>
+      <input type="text" name="ivSite" [(ngModel)]="formData.ivSite">
+    </div>
+
+    <div class="field-group">
+      <label>Inserted By</label>
+      <input type="text" name="insertedBy" [(ngModel)]="formData.insertedBy">
+    </div>
+
+  </div>  
+
+  <h2>Observations & Outcome</h2>
+
+  <!-- OBSERVATION HEADER -->
+  <div class="grid">
+
+    <input placeholder="By (Nurse 1)"
+      name="by1"
+      [(ngModel)]="formData.by1">
+
+    <input placeholder="By (Nurse 2)"
+      name="by2"
+      [(ngModel)]="formData.by2">
+
+    <input placeholder="By (Nurse 3)"
+      name="by3"
+      [(ngModel)]="formData.by3">
+
+    <input placeholder="Notes"
+      name="notes"
+      [(ngModel)]="formData.notes">
+
+  </div>
+
+  <hr>
+
+  <!-- OBSERVATION TABLE -->
+  <h3>Vitals Observation Chart</h3>
+
+  <div class="table-box">
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>HR</th>
+          <th>BP</th>
+          <th>RR</th>
+          <th>Pupils</th>
+          <th>ECG Rhythm</th>
+          <th>Tracing</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><input name="obsTime" [(ngModel)]="formData.obsTime"></td>
+          <td><input name="hr" [(ngModel)]="formData.hr"></td>
+          <td><input name="bp" [(ngModel)]="formData.bp"></td>
+          <td><input name="rr" [(ngModel)]="formData.rr"></td>
+          <td><input name="pupils" [(ngModel)]="formData.pupils"></td>
+          <td><input name="ecg" [(ngModel)]="formData.ecg"></td>
+          <td><input name="tracing" [(ngModel)]="formData.tracing"></td>
+        </tr>
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <hr>
+
+  <!-- OUTCOME -->
+  <h3>Outcome of Resuscitation</h3>
+
+  <div class="grid">
+
+    <input placeholder="CPR Ended"
+      name="cprEnded"
+      [(ngModel)]="formData.cprEnded">
+
+    <input placeholder="Return of Circulation HR"
+      name="rocHR"
+      [(ngModel)]="formData.rocHR">
+
+    <input placeholder="Return of Circulation BP"
+      name="rocBP"
+      [(ngModel)]="formData.rocBP">
+
+    <input placeholder="Return of Circulation RR"
+      name="rocRR"
+      [(ngModel)]="formData.rocRR">
+
+    <input placeholder="EMS Arrival Time"
+      name="emsArrived"
+      [(ngModel)]="formData.emsArrived">
+
+    <input placeholder="Handover Time"
+      name="handoverTime"
+      [(ngModel)]="formData.handoverTime">
+
+    <input placeholder="Transferred To"
+      name="transferredTo"
+      [(ngModel)]="formData.transferredTo">
+
+    <input placeholder="Escorted By"
+      name="escortedBy"
+      [(ngModel)]="formData.escortedBy">
+
+  </div>
+
+</section>
+<section id="D" class="card">
+
+  <h2>Shock & Drug Administration Record</h2>
+
+  <div class="table-box">
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>ECG Rhythm</th>
+          <th>AED Defib</th>
+          <th>Adrenaline (1:10,000)</th>
+          <th>Atropine</th>
+          <th>Ca Gluconate 10%</th>
+          <th>NaHCO₃ 8.4%</th>
+          <th>Other Drugs</th>
+          <th>Route (IV/ETT)</th>
+          <th>Administered By</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td><input name="drugTime" [(ngModel)]="formData.drugTime"></td>
+          <td><input name="drugECG" [(ngModel)]="formData.drugECG"></td>
+          <td><input name="aedDefib" [(ngModel)]="formData.aedDefib"></td>
+          <td><input name="adrenaline" [(ngModel)]="formData.adrenaline"></td>
+          <td><input name="atropine" [(ngModel)]="formData.atropine"></td>
+          <td><input name="calcium" [(ngModel)]="formData.calcium"></td>
+          <td><input name="bicarbonate" [(ngModel)]="formData.bicarbonate"></td>
+          <td><input name="otherDrugs" [(ngModel)]="formData.otherDrugs"></td>
+          <td><input name="route" [(ngModel)]="formData.route"></td>
+          <td><input name="adminBy" [(ngModel)]="formData.adminBy"></td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</section>
+
+    <button class="submit-btn" type="submit">
+      Submit CPR Form
+    </button>
 
   </form>
 
