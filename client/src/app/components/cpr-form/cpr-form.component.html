@@ -26,8 +26,8 @@
     <div class="field-group">
       <label>Patient Name</label>
       <input type="text"
-        name="clinicName"
-        [(ngModel)]="formData.clinicName">
+        name="PatientName"
+        [(ngModel)]="formData.patientName">
     </div>
 
     <div class="field-group">
@@ -77,40 +77,68 @@
 </section>
 
     <!-- SECTION B -->
-    <section id="B" class="card">
+   <section id="B" class="card">
 
-      <h2>Section B - Clinical</h2>
+  <h2>Section B - Clinical</h2>
 
-      <div class="grid">
+  <div class="grid">
 
-        <input placeholder="Respiration"
-          name="respiration"
-          [(ngModel)]="formData.respiration">
+    <div class="field-group">
+      <label>Respiration</label>
+      <input
+        type="text"
+        name="respiration"
+        [(ngModel)]="formData.respiration">
+    </div>
 
-        <input placeholder="Oxygen L/min"
-          name="oxygen"
-          [(ngModel)]="formData.oxygen">
+    <div class="field-group">
+      <label>Oxygen Administered (L/min)</label>
+      <input
+        type="text"
+        name="oxygen"
+        [(ngModel)]="formData.oxygen">
+    </div>
 
-        <input placeholder="Pulse"
-          name="pulse"
-          [(ngModel)]="formData.pulse">
+    <div class="field-group">
+      <label>Pulse</label>
+      <input
+        type="text"
+        name="pulse"
+        [(ngModel)]="formData.pulse">
+    </div>
 
-        <input placeholder="Blood Pressure"
-          name="bloodPressure"
-          [(ngModel)]="formData.bloodPressure">
+    <div class="field-group">
+      <label>Blood Pressure</label>
+      <input
+        type="text"
+        name="bloodPressure"
+        [(ngModel)]="formData.bloodPressure">
+    </div>
 
-        <input placeholder="ECG Rhythm"
-          name="ecgRhythm"
-          [(ngModel)]="formData.ecgRhythm">
+    <div class="field-group">
+      <label>ECG Rhythm</label>
+      <input
+        type="text"
+        name="ecgRhythm"
+        [(ngModel)]="formData.ecgRhythm">
+    </div>
 
-        <input placeholder="AED"
-          name="aed"
-          [(ngModel)]="formData.aed">
+    <div class="field-group">
+      <label>AED Applied</label>
+      <select
+        name="aed"
+        [(ngModel)]="formData.aed">
 
-      </div>
+        <option value="">Select</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
 
-    </section>
+      </select>
+    </div>
 
+  </div>
+
+</section>
     <!-- SECTION C -->
     <!-- VASCULAR ACCESS -->
 <section id="C" class="card">
@@ -177,28 +205,6 @@
 
   </div>  
 
-  <h2>Observations & Outcome</h2>
-
-  <!-- OBSERVATION HEADER -->
-  <div class="grid">
-
-    <input placeholder="By (Nurse 1)"
-      name="by1"
-      [(ngModel)]="formData.by1">
-
-    <input placeholder="By (Nurse 2)"
-      name="by2"
-      [(ngModel)]="formData.by2">
-
-    <input placeholder="By (Nurse 3)"
-      name="by3"
-      [(ngModel)]="formData.by3">
-
-    <input placeholder="Notes"
-      name="notes"
-      [(ngModel)]="formData.notes">
-
-  </div>
 
   <hr>
 

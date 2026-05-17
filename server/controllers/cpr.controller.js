@@ -16,6 +16,7 @@ exports.submitForm = (req, res) => {
             doctorName,
             relativeName,
             ambulanceCalledBy,
+
             respiration,
             oxygen,
             pulse,
@@ -34,6 +35,7 @@ exports.submitForm = (req, res) => {
             ivTime,
             ivSite,
             insertedBy,
+
             outcome,
 
             drugTime,
@@ -47,7 +49,16 @@ exports.submitForm = (req, res) => {
             route,
             adminBy
 
-        ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+        )
+
+        VALUES (
+
+            ?,?,?,?,?,?,?,?,?,?,
+            ?,?,?,?,?,?,?,?,?,?,
+            ?,?,?,?,?,?,?,?,?,?,
+            ?,?,?,?,?
+
+        )
     `;
 
     db.query(sql, [
@@ -61,6 +72,7 @@ exports.submitForm = (req, res) => {
         data.doctorName,
         data.relativeName,
         data.ambulanceCalledBy,
+
         data.respiration,
         data.oxygen,
         data.pulse,
@@ -79,6 +91,7 @@ exports.submitForm = (req, res) => {
         data.ivTime,
         data.ivSite,
         data.insertedBy,
+
         data.outcome,
 
         data.drugTime,
@@ -95,10 +108,21 @@ exports.submitForm = (req, res) => {
     ], (err, result) => {
 
         if (err) {
-            console.log(err);
-            return res.status(500).json({ message: 'Database Error' });
+
+            console.log("DATABASE ERROR:", err);
+
+            return res.status(500).json({
+                success: false,
+                message: 'Database Error'
+            });
+
         }
 
-        res.json({ message: 'CPR Form Saved Successfully' });
+        res.status(200).json({
+            success: true,
+            message: 'CPR Form Saved Successfully'
+        });
+
     });
+
 };
