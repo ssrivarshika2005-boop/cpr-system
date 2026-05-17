@@ -58,7 +58,7 @@ export class CPRFormComponent {
 
     this.http.post(
 
-      'https://cpr-backend-8gkp.onrender.com',
+      'https://cpr-backend-8gkp.onrender.com/api',
 
       this.formData
 
