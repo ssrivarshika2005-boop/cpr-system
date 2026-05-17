@@ -4,23 +4,18 @@ import { FormsModule } from '@angular/forms';
 
 import { CommonModule } from '@angular/common';
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
-
   selector: 'app-cpr-form',
-
   standalone: true,
-
   imports: [
     FormsModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
-
   templateUrl: './cpr-form.component.html',
-
   styleUrls: ['./cpr-form.component.css']
-
 })
 
 export class CPRFormComponent {
@@ -58,17 +53,42 @@ export class CPRFormComponent {
 
     this.http.post(
 
-      'https://cpr-backend-8gkp.onrender.com/api',
+      'https://cpr-backend-8gkp.onrender.com/api/cpr',
 
       this.formData
 
     ).subscribe({
 
-      next: (res: any) => {
+      next: (res) => {
 
         console.log(res);
 
         alert('CPR Form Saved Successfully');
+
+        this.formData = {
+
+          patientName: '',
+          nric: '',
+          clinicName: '',
+          arrestDateTime: '',
+          location: '',
+          doctorInformedBy: '',
+          doctorName: '',
+          relativeName: '',
+          ambulanceCalledBy: '',
+          respiration: '',
+          oxygen: '',
+          pulse: '',
+          bloodPressure: '',
+          ecgRhythm: '',
+          aed: '',
+          avf: '',
+          cvc: '',
+          ivSite: '',
+          insertedBy: '',
+          outcome: ''
+
+        };
 
       },
 
