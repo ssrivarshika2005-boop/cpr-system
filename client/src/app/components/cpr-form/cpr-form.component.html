@@ -6,13 +6,7 @@
     <p>Clinical Documentation System</p>
   </div>
 
-  <!-- NAV -->
-  <div class="nav">
-    <a href="#A">Section A</a>
-    <a href="#B">Section B</a>
-    <a href="#C">Section C</a>
-    <a href="#D">Drug Record</a>
-  </div>
+
 
   <form (ngSubmit)="submitForm()">
 
@@ -248,42 +242,65 @@
   <!-- OUTCOME -->
   <h3>Outcome of Resuscitation</h3>
 
-  <div class="grid">
+<div class="grid">
 
-    <input placeholder="CPR Ended"
+  <div class="field-group">
+    <label>CPR Ended</label>
+    <input type="text"
       name="cprEnded"
       [(ngModel)]="formData.cprEnded">
-
-    <input placeholder="Return of Circulation HR"
-      name="rocHR"
-      [(ngModel)]="formData.rocHR">
-
-    <input placeholder="Return of Circulation BP"
-      name="rocBP"
-      [(ngModel)]="formData.rocBP">
-
-    <input placeholder="Return of Circulation RR"
-      name="rocRR"
-      [(ngModel)]="formData.rocRR">
-
-    <input placeholder="EMS Arrival Time"
-      name="emsArrived"
-      [(ngModel)]="formData.emsArrived">
-
-    <input placeholder="Handover Time"
-      name="handoverTime"
-      [(ngModel)]="formData.handoverTime">
-
-    <input placeholder="Transferred To"
-      name="transferredTo"
-      [(ngModel)]="formData.transferredTo">
-
-    <input placeholder="Escorted By"
-      name="escortedBy"
-      [(ngModel)]="formData.escortedBy">
-
   </div>
 
+  <div class="field-group">
+    <label>Return of Circulation HR</label>
+    <input type="text"
+      name="rocHR"
+      [(ngModel)]="formData.rocHR">
+  </div>
+
+  <div class="field-group">
+    <label>Return of Circulation BP</label>
+    <input type="text"
+      name="rocBP"
+      [(ngModel)]="formData.rocBP">
+  </div>
+
+  <div class="field-group">
+    <label>Return of Circulation RR</label>
+    <input type="text"
+      name="rocRR"
+      [(ngModel)]="formData.rocRR">
+  </div>
+
+  <div class="field-group">
+    <label>EMS Arrival Time</label>
+    <input type="text"
+      name="emsArrived"
+      [(ngModel)]="formData.emsArrived">
+  </div>
+
+  <div class="field-group">
+    <label>Handover Time</label>
+    <input type="text"
+      name="handoverTime"
+      [(ngModel)]="formData.handoverTime">
+  </div>
+
+  <div class="field-group">
+    <label>Transferred To</label>
+    <input type="text"
+      name="transferredTo"
+      [(ngModel)]="formData.transferredTo">
+  </div>
+
+  <div class="field-group">
+    <label>Escorted By</label>
+    <input type="text"
+      name="escortedBy"
+      [(ngModel)]="formData.escortedBy">
+  </div>
+
+ </div>
 </section>
 <section id="D" class="card">
 
