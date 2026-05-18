@@ -8,8 +8,6 @@ exports.submitForm = (req, res) => {
         INSERT INTO cpr_forms (
 
             patientName,
-            nric,
-            clinicName,
             arrestDateTime,
             location,
             doctorInformedBy,
@@ -64,8 +62,6 @@ exports.submitForm = (req, res) => {
     db.query(sql, [
 
         data.patientName,
-        data.nric,
-        data.clinicName,
         data.arrestDateTime,
         data.location,
         data.doctorInformedBy,

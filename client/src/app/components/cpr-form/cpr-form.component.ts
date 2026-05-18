@@ -23,8 +23,6 @@ export class CPRFormComponent {
   formData: any = {
 
     patientName: '',
-    nric: '',
-    clinicName: '',
     arrestDateTime: '',
     location: '',
     doctorInformedBy: '',
@@ -85,8 +83,6 @@ export class CPRFormComponent {
         this.formData = {
 
           patientName: '',
-          nric: '',
-          clinicName: '',
           arrestDateTime: '',
           location: '',
           doctorInformedBy: '',
